@@ -5,21 +5,23 @@ import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UserService {
-  constructor(private readonly prisma: PrismaService){}
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(createUserDto: CreateUserDto) {
-    const user = {
+    const data = {
       ...createUserDto,
       password: await bcrypt.hash(createUserDto.password, 10),
-    }
+    };
 
+    const createdUser = await this.prisma.user.create({ data });
 
-    return user;
+    return {
+      ...createdUser,
+      password: undefined,
+    };
   }
 
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }
-
- 
 }
