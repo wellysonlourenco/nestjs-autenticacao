@@ -1,5 +1,7 @@
 # Autenticação (Sistema de Login) com Token JWT
 
+Dica: Utilize a extensao VScode Thunde Client para realizar o request (POST)
+
 ## Iniciando um projeto NestJS
 
 Antes de iniciar, certifique-se de que você possui um projeto NestJS criado e que a CLI do NestJS está instalada no seu computador.
