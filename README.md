@@ -1,6 +1,6 @@
 # Autenticação (Sistema de Login) com Token JWT
 
-Dica: Utilize a extensao VScode Thunde Client para realizar o request (POST)
+### `Dica: Utilize a extensao no VScode Thunder Client para realizar o request (POST)`
 
 ## Iniciando um projeto NestJS
 
