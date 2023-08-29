@@ -1,11 +1,23 @@
 import { Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
+import { User } from 'src/user/entities/user.entity';
 import { UserService } from 'src/user/user.service';
+import { UserPayload } from './models/UserPayload';
 
 
 @Injectable()
 export class AuthService {
-    constructor (private readonly userService: UserService){}
+    constructor (private readonly userService: UserService, private readonly jwtService: JwtService){}
+     
+    login(user: User) {
+        //transforma o user em JWT
+        const payload : UserPayload = {
+            sub: user.id,
+            email: user.email,
+            name: user.name,
+        };
+    }
 
 
     async validateUser(email: string, password: string) {
