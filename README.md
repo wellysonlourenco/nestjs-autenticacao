@@ -752,5 +752,3 @@ export class LoginValidationMiddleware implements NestMiddleware {
 }
 ```
 
-
-creditos: https://fabricadesinapse.gitbook.io/sinapse-book/nestjs/autenticacao-sistema-de-login-com-token-jwt

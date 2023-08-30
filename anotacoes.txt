@@ -1,2 +1,6 @@
 01:57:00 min
 https://www.youtube.com/watch?v=3z6Cs_PtYc0
+
+
+>>verificar o DB
+npx prisma studio
