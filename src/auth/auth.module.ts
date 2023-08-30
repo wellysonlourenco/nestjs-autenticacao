@@ -6,7 +6,10 @@ import { AuthService } from './auth.service';
 import { LocalStrategy } from './strategies/local.strategy';
 
 @Module({
-    imports: [UserModule, JwtModule],
+    imports: [UserModule, JwtModule.register({
+        secret: process.env.JWT_SECRET,
+        signOptions: { expiresIn: '30d'},
+    })],
     controllers: [AuthController],
     providers: [AuthService, LocalStrategy],
 })
